@@ -49,6 +49,9 @@ class ServiceGroup(base.BaseV30):
     def get(self, name, **kwargs):
         return self._get(self.url_prefix + name, **kwargs)
 
+    def get_oper(self, name, **kwargs):
+        return self._get(self.url_prefix + name + '/oper', **kwargs)
+
     def _set(self, name, protocol=None, lb_method=None, hm_name=None,
              update=False, **kwargs):
 

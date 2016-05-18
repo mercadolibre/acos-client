@@ -28,7 +28,7 @@ class Server(base.BaseV30):
             "server": {
                 "name": name,
                 "host": ip_address,
-                "action": 'enable' if status else 'disable',
+                "action": kwargs.get('admin_state'),
             }
         }
 
@@ -47,7 +47,7 @@ class Server(base.BaseV30):
             "server": {
                 "name": name,
                 "host": ip_address,
-                "action": 'enable' if status else 'disable',
+                "action": kwargs.get('admin_state'),
             }
         }
 

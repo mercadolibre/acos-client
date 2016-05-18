@@ -14,7 +14,9 @@
 
 import acos_client.errors as acos_errors
 import acos_client.v30.base as base
+import logging
 
+LOG = logging.getLogger(__name__)
 
 class Member(base.BaseV30):
 
@@ -47,7 +49,6 @@ class Member(base.BaseV30):
                server_port,
                status=STATUS_ENABLE,
                update=False, **kwargs):
-
         url = self.url_base_tmpl.format(gname=service_group_name)
         if update:
             url += self.url_mbr_tmpl.format(

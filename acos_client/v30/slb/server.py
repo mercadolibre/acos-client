@@ -52,6 +52,10 @@ class Server(base.BaseV30):
         }
 
         self.get(name, **kwargs)
+        try:
+            self.get(name, **kwargs)
+        except acos_errors.NotFound:
+            raise acos_errors.NotFound()
 
         return self._post(self.url_prefix + name, params, **kwargs)
 

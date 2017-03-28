@@ -26,7 +26,8 @@ class ServiceGroup(base.BaseV30):
         return Member(self.client)
 
     # Valid LB methods
-    ROUND_ROBIN = 'round-robin'
+    #ROUND_ROBIN = 'round-robin'
+    ROUND_ROBIN = 'round-robin-strict'
     WEIGHTED_ROUND_ROBIN = 'weighted-rr'
     LEAST_CONNECTION = 'least-connection'
     WEIGHTED_LEAST_CONNECTION = 'weighted-least-connection'
@@ -99,7 +100,6 @@ class ServiceGroup(base.BaseV30):
             pass
         else:
             raise acos_errors.Exists
-
         self._set(name, protocol, lb_method, **kwargs)
 
     def update(self, name, protocol=None, lb_method=None, health_monitor=None,

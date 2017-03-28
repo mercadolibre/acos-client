@@ -78,7 +78,10 @@ class VirtualPort(base.BaseV30):
                 "port-number": int(port),
                 "template-persist-source-ip": s_pers_name,
                 "template-persist-cookie": c_pers_name,
-                "extended-stats": stats
+                "template-http":"HTTP-TEMPLATE",
+                "pool":"SNAT-Group",
+                "auto":0,
+                "extended-stats": stats,
             }, exclude=exclude_minimize)
         }
 
